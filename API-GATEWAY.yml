@@ -7,14 +7,17 @@ spring:
         - id: product-detail
           uri: lb://product-detail
           predicates:
-             - Path=/addProduct/**
+             - Path=/productDtl/**
         - id: product-service
           uri: lb://product-service
           predicates:
             - Path=/product/**
+
   zipkin:
     base-url: http://localhost:9411/
     sleuth:
       enable: true
       sampler:
         probability: 1 #100% (default = 10%)
+
+
